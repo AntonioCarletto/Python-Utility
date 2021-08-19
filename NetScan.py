@@ -3,8 +3,12 @@
 import scapy.all as scapy
 import argparse
 import subprocess
+import platform
 
-subprocess.call(["clear"])
+if platform.system().lower() == 'windows':
+    subprocess.call('cls', shell=True)
+else:
+    subprocess.call(['clear'])
 print("\n\n")
 print(" _______          __   _________")
 print(" \      \   _____/  |_/   _____/ ____ _____    ____")
