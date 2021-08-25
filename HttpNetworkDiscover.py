@@ -103,7 +103,7 @@ def crawl(url, ip_sito, page_auth_list=[], exclusion=[], src_in_page={}, first_a
         extract_redirect = extract_redirect_from(url)
         for element in extract_redirect:
             links.append(element)
-    # Per ogni link ella pagina
+    # Per ogni link della pagina
     for link in links:
         temp = link
         link = urlparse.urljoin(url,link)
