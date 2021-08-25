@@ -11,7 +11,7 @@ import csv
 from datetime import datetime
 
 EXCLUSION_LINKS = ['https://www.facebook.com', 'https://www.facebook.it', 'https://www.instagram.com', 'google.com', 'mozilla.org', 'apple.com', 'microsoft.com']
-PORTS = ['', '8080', '8081', '5555', '2013', '22222', '2002']
+PORTS = ['', '8080', '8081', '5555', '2013', '22222', '2002', '8530', '8531', '9080', '9443']
 
 
 
