@@ -11,6 +11,7 @@ import csv
 from datetime import datetime
 
 EXCLUSION_LINKS = ['https://www.facebook.com', 'https://www.facebook.it', 'https://www.instagram.com', 'google.com', 'mozilla.org', 'apple.com', 'microsoft.com']
+# PORTS_FOR_CONTROLL = ['443', '10000', '60443', '2423', '8083', '8082', '1433', '50000', '30015']
 PORTS = ['', '8080', '8081', '5555', '2013', '22222', '2002', '8530', '8531', '9080', '9443']
 
 
@@ -20,7 +21,7 @@ def get_arguments():
     parser.add_argument("-t", "--target", dest="ip", help="IP o intervallo di IP da analizzare nella rete")
     options = parser.parse_args()
     if not options.ip:
-        parser.error("\n[-] Per favore, specifica un IP o un intervallo di IP, usa --help per maggiori informazioni.")
+        parser.error("\n[-] Per favore, specifica un IP o un intervallo di IP, usa --help per maggiori informazioni.\nIl software non funziona con la con la /32,  quindi, se si vuole effettuare il test su una sola macchina bisognera' inserire la /31.")
     return options
 
 
