@@ -64,19 +64,25 @@ def get_hostname(ip):
 
 def extract_links_from(url):
     responce = requests.get(url)
-    return re.findall('(?:href=["\'])(.*?)["\']', responce.content.decode(errors="ignore"))
+    extraction = re.findall('(?:href=["\'])(.*?)["\']', responce.content.decode(errors="ignore"))
+    extraction.remove("../")
+    return extraction
 
 
 
 def extract_src_from(url):
     responce = requests.get(url)
-    return re.findall('(?:src=["\'])(.*?)["\']', responce.content.decode(errors="ignore"))
+    extraction = re.findall('(?:src=["\'])(.*?)["\']', responce.content.decode(errors="ignore"))
+    extraction.remove("../")
+    return extraction
 
 
 
 def extract_redirect_from(url):
     responce = requests.get(url)
-    return re.findall('(?:url=["\']?)(.*?)["\'\s][,\s]', str(responce.headers))
+    extraction = re.findall('(?:url=["\']?)(.*?)["\'\s][,\s]', str(responce.headers))
+    extraction.remove("../")
+    return extraction
 
 
 
